@@ -17,7 +17,7 @@ namespace ChessGame
             piece.whitePawn = 15;
             piece.blackPawn = 05;
 
-
+            GameBoard gameBoard = new GameBoard();
 
             var blackPawn1 = piece.blackPawn;
             var blackPawn2 = piece.blackPawn;
@@ -40,7 +40,7 @@ namespace ChessGame
 
 
 
-            GameBoard gameBoard = new GameBoard();
+           
 
 
             gameBoard.board[1, 0] = whitePawn1;
@@ -62,19 +62,23 @@ namespace ChessGame
             gameBoard.board[6, 7] = blackPawn1;
 
 
+            GameBoard gameBoard = new GameBoard();
+
 
             if (answer == "y" || answer == "Y")
             {
                 bool continuePlaying = true; // Spelet ska spela så länge continuePlaying = true
                 while (continuePlaying == true)
                 {
-
+                 
                     gameBoard.PrintGameBoard(gameBoard.board);
-                    continuePlaying = false;
+                    continuePlaying = false;        
+
                 }
 
             }
 
+            
             Console.ReadLine();
         }
     }

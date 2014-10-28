@@ -8,17 +8,17 @@ namespace ChessGame
 {
     class Piece
     {
-        
+
         public int whitePawn { get; set; }
-
         public int blackPawn { get; set; }
+        public int PieceValue { get; set; }
+        public int PositionX { get; set; }
+        public int PositionY { get; set; }
+
+        //List<int> pawnWhite = new List<int>();
 
 
-
-        List<int> pawnWhite = new List<int>();
-
-
-        List<int> pawnBlack = new List<int>();
+        //List<int> pawnBlack = new List<int>();
 
 
     }
