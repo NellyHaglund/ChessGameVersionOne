@@ -62,7 +62,7 @@ namespace ChessGame
             gameBoard.board[6, 7] = blackPawn1;
 
 
-            GameBoard gameBoard = new GameBoard();
+         //   GameBoard gameBoard = new GameBoard();
 
 
             if (answer == "y" || answer == "Y")
