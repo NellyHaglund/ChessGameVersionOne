@@ -14,7 +14,8 @@ namespace ChessGame
         public int PieceValue { get; set; }
         public int PositionX { get; set; }
         public int PositionY { get; set; }
-
+        public string type;
+        public int strength;
         //List<int> pawnWhite = new List<int>();
 
 
