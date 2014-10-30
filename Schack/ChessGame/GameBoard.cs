@@ -10,6 +10,16 @@ namespace ChessGame
     {
         public Piece[,] board = new Piece[8, 8];
 
+
+
+        public void move(Piece piece, Position pos)
+        {
+            board[piece.position.X, piece.position.Y] = null;
+            board[pos.X, pos.Y] = piece;
+            piece.position = pos;
+            
+
+        }
         
         public void PrintGameBoard(Piece[,] board)
         {
