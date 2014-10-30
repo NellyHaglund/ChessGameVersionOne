@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 
 namespace ChessGame
 {
-    class Bishop : Piece
+   public class Position
     {
-        public override void Value()
+        public Position(int x, int y)
         {
-            pieceValue = pieceValue + 4;
+            X = x;
+            Y = y;
+           
         }
+        public int X;
+        public int Y;
+       
     }
 }
