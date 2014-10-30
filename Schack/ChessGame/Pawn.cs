@@ -8,24 +8,25 @@ namespace ChessGame
 {
     class Pawn : Piece
     {
-        public override void Value()
-        {
-            
-        }
-        public int whitePawn { get; set; }
-        public int blackPawn { get; set; }
-
         public Pawn(Position pos, colour c)
         {
             position = pos;
             pieceValue = 5;
             pieceColour = c;
         }
-        public override void PrintPos()
-        {
-            int startX = position.X;
-            int startY = position.Y;
+        //public override void PrintPos()
+        //{
+        //    int startX = position.X;
+        //    int startY = position.Y;
             
+        //}
+
+        public void MovePawn(Position pps)
+        {
+            GameBoard game = new GameBoard();
+            
+           
+
         }
         
     }
