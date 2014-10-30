@@ -132,7 +132,7 @@ namespace ChessGame
                     }
 
                     Console.ReadKey();
-                    continuePlaying = false;
+                    continuePlaying = false;                                    // If continuePlaying == false; the game ends
 
                 }
 

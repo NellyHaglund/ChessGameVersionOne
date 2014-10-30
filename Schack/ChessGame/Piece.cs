@@ -11,7 +11,7 @@ namespace ChessGame
         public Position position;
         public int PositionX { get; set; }
         public int PositionY { get; set; }
-        public colour pieceColour;
+        public colour pieceColour;                  
         public int pieceValue; 
         public virtual void Value()
         {
@@ -22,6 +22,8 @@ namespace ChessGame
             Console.WriteLine("PieceKlassen");
         }
     }
+
+                                                    //Enum class, uses too set players colour, black and/or white
   public enum colour
   {
       white, black
