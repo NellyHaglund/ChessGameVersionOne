@@ -8,13 +8,13 @@ namespace ChessGame
 {
     public class GameBoard
     {
-        public int[,] board = new int[8, 8];
+        public Piece[,] board = new Piece[8, 8];
 
         
-        public int[,] PrintGameBoard(int[,] board)
+        public void PrintGameBoard(Piece[,] board)
         {
-            Piece piece = new Piece();
-
+           
+            
             //int whitePawn = 15;
 
             //int blackPawn = 05;
@@ -26,24 +26,28 @@ namespace ChessGame
                 Console.WriteLine();
                 for (int x = 0; x < 8; x++)
                 {
-                    if (board[y, x] == 0)
+                    if (board[y, x] == null)
                     {
 
                         Console.Write("[ ]");
                     }
-                    else if (board[y, x] == 5)
+                    else if (board[y, x].pieceValue == 5 && board[y, x].pieceColour == colour.white )
                     {
-                        Console.Write("[" + (char)182 + "]");
+                        Console.Write("[B]");
                     }
-                    else if (board[y, x] == 15)
+                    else if (board[y, x].pieceValue == 5 && board[y, x].pieceColour == colour.black)
                     {
-                        Console.Write("[" + (char)165 + "]");
+                        Console.Write("[F]");
+                    }
+                    else 
+                    {
+                        Console.Write("FEL: " +  board[y,x].pieceValue);
                     }
                 }
                 
                 Console.WriteLine();
             }
-            return board;
+            
 
 
         }

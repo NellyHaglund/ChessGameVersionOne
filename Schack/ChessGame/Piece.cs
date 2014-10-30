@@ -6,21 +6,26 @@ using System.Threading.Tasks;
 
 namespace ChessGame
 {
-    class Piece
+  public  abstract class Piece
     {
-
-        public int whitePawn { get; set; }
-        public int blackPawn { get; set; }
-        public int PieceValue { get; set; }
+        public Position position;
         public int PositionX { get; set; }
         public int PositionY { get; set; }
-        public string type;
-        public int strength;
-        //List<int> pawnWhite = new List<int>();
-
-
-        //List<int> pawnBlack = new List<int>();
-
-
+        public colour pieceColour;
+        public int pieceValue; 
+        public virtual void Value()
+        {
+            Console.WriteLine("Värde PieceKlassen");
+        }
+        public virtual void PrintPos()
+        {
+            Console.WriteLine("PieceKlassen");
+        }
     }
+  public enum colour
+  {
+      white, black
+
+
+  }
 }

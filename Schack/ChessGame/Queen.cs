@@ -8,5 +8,9 @@ namespace ChessGame
 {
     class Queen : Piece
     {
+        public override void Value()
+        {
+            pieceValue = pieceValue + 12;
+        }
     }
 }

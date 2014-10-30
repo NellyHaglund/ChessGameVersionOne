@@ -10,17 +10,19 @@ namespace ChessGame
     {
         static void Main(string[] args)
         {
+            
+
             StartClass sC = new StartClass();
             //Move move = new Move();
             sC.Start();
 
             Console.ReadLine();
 
-         
+
             Console.ReadKey();
 
-            //SUCKKKAAAS
             
+
         }
     }
 }
