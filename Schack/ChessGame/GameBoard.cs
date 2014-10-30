@@ -10,11 +10,12 @@ namespace ChessGame
     {
         public Piece[,] board = new Piece[8, 8];
 
-        public void move(Piece piece, Position pos)
+        public void Move(Piece piece, Position pos)
         {
             board[piece.position.X, piece.position.Y] = null;
             board[pos.X, pos.Y] = piece;
-            piece.position = pos;
+            piece.position.X = pos.X;
+            piece.position.Y = pos.Y;
         }
         public void PrintGameBoard(Piece[,] board)
         {
@@ -28,23 +29,23 @@ namespace ChessGame
 
                         Console.Write("[ ]");
                     }
-                    else if (board[y, x].pieceValue == 5 && board[y, x].pieceColour == colour.white )
+                    else if (board[y, x].pieceValue == 5 && board[y, x].pieceColour == colour.white)
                     {
                         Console.Write("[B]");
                     }
                     else if (board[y, x].pieceValue == 5 && board[y, x].pieceColour == colour.black)
                     {
-                        Console.Write("[F]");
+                        Console.Write("[P]");
                     }
-                    else 
+                    else
                     {
-                        Console.Write("FEL: " +  board[y,x].pieceValue);
+                        Console.Write("FEL: " + board[y, x].pieceValue);
                     }
                 }
-                
+
                 Console.WriteLine();
             }
-            
+
 
 
         }

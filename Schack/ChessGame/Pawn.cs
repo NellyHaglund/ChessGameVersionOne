@@ -8,6 +8,7 @@ namespace ChessGame
 {
     class Pawn : Piece
     {
+                                                // Create Pawn with position, value and colour
         public Pawn(Position pos, colour c)
         {
             position = pos;
@@ -17,11 +18,14 @@ namespace ChessGame
 
         public void MovePawn(Position pps)
         {
-            GameBoard game = new GameBoard();
-            
+           
            
 
         }
-        
+                                                // Method that Prints position of Pawn
+        public override string ToString()
+        {
+            return "Pawn at position:  " + position.X + "," + position.Y;
+        }
     }
 }
