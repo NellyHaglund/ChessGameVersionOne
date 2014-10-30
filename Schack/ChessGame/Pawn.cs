@@ -14,12 +14,6 @@ namespace ChessGame
             pieceValue = 5;
             pieceColour = c;
         }
-        //public override void PrintPos()
-        //{
-        //    int startX = position.X;
-        //    int startY = position.Y;
-            
-        //}
 
         public void MovePawn(Position pps)
         {
