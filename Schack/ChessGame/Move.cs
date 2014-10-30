@@ -6,27 +6,14 @@ using System.Threading.Tasks;
 
 namespace ChessGame
 {
-    //class Move
-    //{
-    //{
-    //    StartClass startC = new StartClass();
+    class Move
+    {
 
-    //    GameBoard gameB = new GameBoard();
+        public void MovePawn()
+        {
+            GameBoard gameBoard = new GameBoard();
 
-
-    //    public int[,] MovePawn(int[,] board)
-    //    {
-    //        int newBoard[,] = new int[8,8];
-    //        int amount = 0 ;
-
-    //        if (true)
-    //{
-		 
-    //}
-
-    //        return newPos;
-    //    }
-
-    //    }
-    //}
+            gameBoard.board[4, 3] = new Pawn(new Position(4, 3), colour.black);
+        }
+    }
 }
