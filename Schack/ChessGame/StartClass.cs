@@ -68,6 +68,10 @@ namespace ChessGame
                     Console.Clear();
                     gameBoard.PrintGameBoard(gameBoard.board);
                     Console.ReadKey();
+                    gameBoard.move(gameBoard.board[4,1], new Position(5, 1));
+                    Console.Clear();
+                    gameBoard.PrintGameBoard(gameBoard.board);
+                    Console.ReadKey();
 
                     continuePlaying = false;        
 
