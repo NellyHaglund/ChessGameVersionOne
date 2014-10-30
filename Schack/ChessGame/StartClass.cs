@@ -47,10 +47,13 @@ namespace ChessGame
             gameBoard.board[6, 6] = new Pawn(new Position(6, 6), colour.black);
             gameBoard.board[6, 7] = new Pawn(new Position(6, 7), colour.black);
                                                               
+<<<<<<< HEAD
            
 
 =======
 >>>>>>> origin/master
+=======
+>>>>>>> parent of 0a48f10... bonden rör sig
 
 
             GameBoard gameBoard = new GameBoard();
@@ -84,37 +87,8 @@ namespace ChessGame
                 bool continuePlaying = true; // Spelet ska spela så länge continuePlaying = true
                 while (continuePlaying == true)
                 {
-                    Console.Clear();
+                 
                     gameBoard.PrintGameBoard(gameBoard.board);
-                    Console.ReadKey();
-
-                    gameBoard.move(gameBoard.board[1, 0], new Position(2, 0));
-                    Console.Clear();
-                    gameBoard.PrintGameBoard(gameBoard.board);
-                    Console.ReadKey();
-
-                    gameBoard.move(gameBoard.board[6, 1], new Position(5, 1));
-                    Console.Clear();
-                    gameBoard.PrintGameBoard(gameBoard.board);
-                    Console.ReadKey();
-
-                    gameBoard.move(gameBoard.board[2, 0], new Position(3, 0));
-                    Console.Clear();
-                    gameBoard.PrintGameBoard(gameBoard.board);
-                    Console.ReadKey();
-
-                    gameBoard.move(gameBoard.board[5, 1], new Position(4, 1));
-                    Console.Clear();
-                    gameBoard.PrintGameBoard(gameBoard.board);
-                    Console.ReadKey();
-
-                    gameBoard.move(gameBoard.board[3, 0], new Position(4, 1));
-                    Console.Clear();
-                    gameBoard.PrintGameBoard(gameBoard.board);
-                    Console.ReadKey();
-
-                   
-
                     continuePlaying = false;        
 
                 }
