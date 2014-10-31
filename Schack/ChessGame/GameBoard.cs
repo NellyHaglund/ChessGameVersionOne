@@ -13,9 +13,10 @@ namespace ChessGame
         public void UpdatePosition(Piece piece, Position pos)                 // UpdatePosition-method, gets the piece and sets the new position X & Y
         {
             board[piece.position.X, piece.position.Y] = null;
-            board[pos.X, pos.Y] = piece;
             piece.position.X = pos.X;
             piece.position.Y = pos.Y;
+            board[pos.X, pos.Y] = piece;
+           
         }
         public void PrintGameBoard()                  // PrintGameBoard-method, prints out the GameBoard and sets out the 
         {     

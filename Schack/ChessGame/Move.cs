@@ -14,7 +14,7 @@ namespace ChessGame
         {
             if (randomPiece.pieceColour == colour.white)
             {
-                gameBoard.UpdatePosition(randomPiece, new Position( randomPiece.position.X = randomPiece.position.X + 1, randomPiece.position.Y ));
+                gameBoard.UpdatePosition(randomPiece, new Position( randomPiece.position.X + 1,randomPiece.position.Y));
             }
             else
             {
@@ -26,7 +26,7 @@ namespace ChessGame
         StartClass start = new StartClass();        
         public void RandomizeMove(List<Piece> whitePawnList)
         {
-            int ran = random.Next((7));
+            int ran = 0;
             
             var randomPiece = whitePawnList.ElementAt(ran);
             MovePawn(randomPiece);

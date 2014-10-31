@@ -9,8 +9,8 @@ namespace ChessGame
   public  abstract class Piece
     {
         public Position position;
-        public int PositionX { get; set; }
-        public int PositionY { get; set; }
+        //public int PositionX { get; set; }
+        //public int PositionY { get; set; }
         public bool Moved { get; set; }
         public colour pieceColour;                  
         public int pieceValue;

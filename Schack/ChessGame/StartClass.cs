@@ -97,6 +97,7 @@ namespace ChessGame
 
                     movePosition.RandomizeMove(whitePawnList);  // whitePawn moves from position [1,0] -> [2,0]
                     Console.Clear();
+                   
                     gameBoard.PrintGameBoard();
                                                                 // Prints the GameBoard updated
                     Console.ReadKey();
