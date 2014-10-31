@@ -24,8 +24,9 @@ namespace ChessGame
            // it can move two or one step
            // if moved = true, it can only move one step
         }
-                                               
-        public override string ToString()       // Method that Prints position of Pawn
+        
+        // Method that Prints position of Pawn                                      
+        public override string ToString()       
         {
             return "Pawn at position:  " + position.X + "," + position.Y;
         }

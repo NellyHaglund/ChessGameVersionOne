@@ -15,6 +15,7 @@ namespace ChessGame
             this.gameBoard = gameBoard;
         }
 
+        //MovePawn-Method that makes the pawns move 1 step
         public void MovePawn(Piece randomPiece)
         {
             if (randomPiece.pieceColour == colour.white)
@@ -25,15 +26,17 @@ namespace ChessGame
             {
                 gameBoard.UpdatePosition(randomPiece, new Position(randomPiece.position.X - 1,randomPiece.position.Y));
             }
-           // gameBoard.board[4, 3] = new Pawn(new Position(4, 3), colour.black);
+          
         }
         Random random = new Random();
-            
-        public void RandomizeMove(List<Piece> whitePawnList)
+        
+        //RandomizeMove-Method that randomize which pawn in the
+        //white/black-PawnList that moves
+        public void RandomizeMove(List<Piece> pawnList)
         {
             int ran = random.Next((7));
             
-            var randomPiece = whitePawnList.ElementAt(ran);
+            var randomPiece = pawnList.ElementAt(ran);
             MovePawn(randomPiece);
         }
        
