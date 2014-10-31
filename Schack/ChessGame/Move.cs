@@ -8,29 +8,33 @@ namespace ChessGame
 {
     public class MovePosition
     {
-        GameBoard gameBoard = new GameBoard();
+        GameBoard gameBoard;
+        public MovePosition(GameBoard gameBoard)
+        {
+            // TODO: Complete member initialization
+            this.gameBoard = gameBoard;
+        }
 
         public void MovePawn(Piece randomPiece)
         {
             if (randomPiece.pieceColour == colour.white)
             {
-                gameBoard.UpdatePosition(randomPiece, new Position( randomPiece.position.X + 1,randomPiece.position.Y));
+                gameBoard.UpdatePosition(randomPiece, new Position(randomPiece.position.X + 1,randomPiece.position.Y));
             }
             else
             {
-                gameBoard.UpdatePosition(randomPiece, new Position() { X = randomPiece.position.X - 1, Y = randomPiece.position.Y });
+                gameBoard.UpdatePosition(randomPiece, new Position(randomPiece.position.X - 1,randomPiece.position.Y));
             }
            // gameBoard.board[4, 3] = new Pawn(new Position(4, 3), colour.black);
         }
         Random random = new Random();
-        StartClass start = new StartClass();        
+            
         public void RandomizeMove(List<Piece> whitePawnList)
         {
-            int ran = 0;
+            int ran = random.Next((7));
             
             var randomPiece = whitePawnList.ElementAt(ran);
             MovePawn(randomPiece);
-
         }
        
 
@@ -45,5 +49,6 @@ namespace ChessGame
         //then go in the loop, which will have a lot of
         //if/else. then go outside the loop when the piece
         //have moved
+
     }
 }

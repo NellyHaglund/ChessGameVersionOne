@@ -8,6 +8,8 @@ namespace ChessGame
 {
    public class Position
     {
+        public int X;
+        public int Y;
         public Position()
         {
 
@@ -18,8 +20,6 @@ namespace ChessGame
             Y = y;
            
         }
-        public int X;
-        public int Y;
        
     }
 }

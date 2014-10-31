@@ -65,7 +65,7 @@ namespace ChessGame
             blackPawnList.Add(gameBoard.board[6, 7]);
 
 
-            MovePosition movePosition = new MovePosition();
+            MovePosition movePosition = new MovePosition(gameBoard);
            
 
                                                                                 // Print whitePawn list
@@ -93,18 +93,18 @@ namespace ChessGame
                     gameBoard.PrintGameBoard();
                     Console.ReadKey();
 
-
-
-                    movePosition.RandomizeMove(whitePawnList);  // whitePawn moves from position [1,0] -> [2,0]
                     Console.Clear();
+                    movePosition.RandomizeMove(whitePawnList);  // whitePawn moves from position [1,0] -> [2,0]
+                    Console.ReadKey();
                    
                     gameBoard.PrintGameBoard();
                                                                 // Prints the GameBoard updated
                     Console.ReadKey();
-
+                    Console.Clear();
+                                       
                     //gameBoard.UpdatePosition(gameBoard.board[6, 1], new Position(5, 1));
                     //Console.Clear();
-                    //gameBoard.PrintGameBoard(gameBoard.board);
+                    //gameBoard.PrintGameBoard();
                     //Console.ReadKey();
 
                     //gameBoard.UpdatePosition(gameBoard.board[2, 0], new Position(3, 0));
