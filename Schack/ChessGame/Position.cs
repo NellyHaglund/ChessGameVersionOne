@@ -8,7 +8,10 @@ namespace ChessGame
 {
    public class Position
     {
-                                            // Constructor
+        public Position()
+        {
+
+        }                                // Constructor
         public Position(int x, int y)
         {
             X = x;

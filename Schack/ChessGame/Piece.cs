@@ -11,8 +11,10 @@ namespace ChessGame
         public Position position;
         public int PositionX { get; set; }
         public int PositionY { get; set; }
+        public bool Moved { get; set; }
         public colour pieceColour;                  
-        public int pieceValue; 
+        public int pieceValue;
+        
         public virtual void Value()
         {
             Console.WriteLine("Värde PieceKlassen");

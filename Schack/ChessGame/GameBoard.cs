@@ -10,15 +10,18 @@ namespace ChessGame
     {
         public Piece[,] board = new Piece[8, 8];                    // creating the array of the GameBoard at 8*8 
 
-        public void Move(Piece piece, Position pos)                 // Move-method, gets the piece and sets the new position X & Y
+        public void UpdatePosition(Piece piece, Position pos)                 // UpdatePosition-method, gets the piece and sets the new position X & Y
         {
             board[piece.position.X, piece.position.Y] = null;
             board[pos.X, pos.Y] = piece;
             piece.position.X = pos.X;
             piece.position.Y = pos.Y;
         }
-        public void PrintGameBoard(Piece[,] board)                  // PrintGameBoard-method, prints out the GameBoard and sets out the 
-        {                                                           // pieces on its startPositions
+        public void PrintGameBoard()                  // PrintGameBoard-method, prints out the GameBoard and sets out the 
+        {     
+                                                      // pieces on its startPositions
+       
+            
             for (int y = 0; y < 8; y++)
             {
                 Console.WriteLine();
@@ -31,11 +34,19 @@ namespace ChessGame
                     }
                     else if (board[y, x].pieceValue == 5 && board[y, x].pieceColour == colour.white)
                     {
-                        Console.Write("[B]");
+                        Console.Write("[");
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        Console.Write("B");
+                        Console.ResetColor();
+                        Console.Write("]");
                     }
                     else if (board[y, x].pieceValue == 5 && board[y, x].pieceColour == colour.black)
                     {
-                        Console.Write("[P]");
+                        Console.Write("[");
+                        Console.ForegroundColor = ConsoleColor.DarkGreen;
+                        Console.Write("B");
+                        Console.ResetColor();
+                        Console.Write("]");
                     }
                     else
                     {

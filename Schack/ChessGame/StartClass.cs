@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace ChessGame
 {
-    class StartClass
-    {
+    public class StartClass
+    {  
+        public List<Piece> whitePawnList = new List<Piece>();
         public void Start()
+
         {
                                                                                 //Start Game
             Console.WriteLine("Start the game? y/n");
@@ -26,7 +28,7 @@ namespace ChessGame
             gameBoard.board[1, 7] = new Pawn(new Position(1, 7), colour.white);
 
                                                                                  //Adds white pawns to a list
-            List<Piece> whitePawnList = new List<Piece>();
+          
 
             whitePawnList.Add(gameBoard.board[1, 0]);
             whitePawnList.Add(gameBoard.board[1, 1]);
@@ -61,9 +63,9 @@ namespace ChessGame
             blackPawnList.Add(gameBoard.board[6, 5]);
             blackPawnList.Add(gameBoard.board[6, 6]);
             blackPawnList.Add(gameBoard.board[6, 7]);
-                             
-            
 
+
+            MovePosition movePosition = new MovePosition();
            
 
                                                                                 // Print whitePawn list
@@ -80,7 +82,7 @@ namespace ChessGame
 
             
             Console.ReadKey();
-
+            Random random = new Random();
 
             if (answer == "y" || answer == "Y")
             {
@@ -88,36 +90,38 @@ namespace ChessGame
                 while (continuePlaying == true)
                 {
                     Console.Clear();
-                    gameBoard.PrintGameBoard(gameBoard.board);
+                    gameBoard.PrintGameBoard();
                     Console.ReadKey();
 
-                    gameBoard.Move(gameBoard.board[1, 0], new Position(2, 0));  // whitePawn moves from position [1,0] -> [2,0]
-                    Console.Clear();
-                    gameBoard.PrintGameBoard(gameBoard.board);                  // Prints the GameBoard updated
+
+
+                    movePosition.RandomizeMove(whitePawnList);  // whitePawn moves from position [1,0] -> [2,0]
+                    
+                    gameBoard.PrintGameBoard();                  // Prints the GameBoard updated
                     Console.ReadKey();
 
-                    gameBoard.Move(gameBoard.board[6, 1], new Position(5, 1));
-                    Console.Clear();
-                    gameBoard.PrintGameBoard(gameBoard.board);
-                    Console.ReadKey();
+                    //gameBoard.UpdatePosition(gameBoard.board[6, 1], new Position(5, 1));
+                    //Console.Clear();
+                    //gameBoard.PrintGameBoard(gameBoard.board);
+                    //Console.ReadKey();
 
-                    gameBoard.Move(gameBoard.board[2, 0], new Position(3, 0));
-                    Console.Clear();
-                    gameBoard.PrintGameBoard(gameBoard.board);
-                    Console.ReadKey();
+                    //gameBoard.UpdatePosition(gameBoard.board[2, 0], new Position(3, 0));
+                    //Console.Clear();
+                    //gameBoard.PrintGameBoard(gameBoard.board);
+                    //Console.ReadKey();
                                      
-                    gameBoard.Move(gameBoard.board[5, 1], new Position(4, 1));
-                    Console.Clear();
-                    gameBoard.PrintGameBoard(gameBoard.board);
-                    Console.ReadKey();
-                    gameBoard.Move(gameBoard.board[3, 0], new Position(4, 1));
-                    Console.Clear();
-                    gameBoard.PrintGameBoard(gameBoard.board);
-                    Console.ReadKey();
-                    gameBoard.Move(gameBoard.board[4, 1], new Position(5, 1));
-                    Console.Clear();
-                    gameBoard.PrintGameBoard(gameBoard.board);
-                    Console.ReadKey();
+                    //gameBoard.UpdatePosition(gameBoard.board[5, 1], new Position(4, 1));
+                    //Console.Clear();
+                    //gameBoard.PrintGameBoard(gameBoard.board);
+                    //Console.ReadKey();
+                    //gameBoard.UpdatePosition(gameBoard.board[3, 0], new Position(4, 1));
+                    //Console.Clear();
+                    //gameBoard.PrintGameBoard(gameBoard.board);
+                    //Console.ReadKey();
+                    //gameBoard.UpdatePosition(gameBoard.board[4, 1], new Position(5, 1));
+                    //Console.Clear();
+                    //gameBoard.PrintGameBoard(gameBoard.board);
+                    //Console.ReadKey();
 
                     foreach (var whitePawn in whitePawnList)                    // prints out updated whitePawn positions
                     {
@@ -132,7 +136,7 @@ namespace ChessGame
                     }
 
                     Console.ReadKey();
-                    continuePlaying = false;                                    // If continuePlaying == false; the game ends
+                    continuePlaying = true;                                    // If continuePlaying == false; the game ends
 
                 }
 

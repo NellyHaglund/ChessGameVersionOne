@@ -6,23 +6,32 @@ using System.Threading.Tasks;
 
 namespace ChessGame
 {
-    class Move
+    public class MovePosition
     {
         GameBoard gameBoard = new GameBoard();
 
-        public void MovePawn()
+        public void MovePawn(Piece randomPiece)
         {
-            
-
-            gameBoard.board[4, 3] = new Pawn(new Position(4, 3), colour.black);
+            if (randomPiece.pieceColour == colour.white)
+            {
+                gameBoard.UpdatePosition(randomPiece, new Position() { X = randomPiece.position.X + 1, Y = randomPiece.position.Y });
+            }
+            else
+            {
+                gameBoard.UpdatePosition(randomPiece, new Position() { X = randomPiece.position.X - 1, Y = randomPiece.position.Y });
+            }
+           // gameBoard.board[4, 3] = new Pawn(new Position(4, 3), colour.black);
         }
         Random random = new Random();
-
-        public void RandomizeMove()
+        StartClass start = new StartClass();
+        Piece playerToBeMoved;
+        public void RandomizeMove(List<Piece> whitePawnList)
         {
-            int x = random.Next((8));
-            int y = random.Next((8));
-            gameBoard.board[x, y] = null;
+            int ran = random.Next((7));
+            
+            var randomPiece = whitePawnList.ElementAt(ran);
+            MovePawn(randomPiece);
+
         }
        
 
@@ -35,7 +44,7 @@ namespace ChessGame
 
         //random on which pawn the player wants to move
         //then go in the loop, which will have a lot of
-        //if/else. then g outside the loop when the piece
+        //if/else. then go outside the loop when the piece
         //have moved
     }
 }

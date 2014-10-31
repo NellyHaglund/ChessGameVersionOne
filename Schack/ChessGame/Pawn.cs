@@ -12,7 +12,7 @@ namespace ChessGame
         public Pawn(Position pos, colour c)     // Create Pawn with position, value and colour
         {
             position = pos;
-            pieceValue = 5;
+            pieceValue = 5;            
             pieceColour = c;
         }
 
