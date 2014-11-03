@@ -14,12 +14,12 @@ namespace ChessGame
         public void Start()
 
         {
-            //Start Game                                                                  
+                                                                                //Start Game
             Console.WriteLine("Start the game? y/n");
             string answer = Console.ReadLine();
 
             GameBoard gameBoard = new GameBoard();
-            //White Pawns set at positions on GameBoard                                                                    
+                                                                                //White Pawns set at positions on GameBoard
             gameBoard.board[1, 0] = new Pawn(new Position(1, 0), colour.white);
             gameBoard.board[1, 1] = new Pawn(new Position(1, 1), colour.white);
             gameBoard.board[1, 2] = new Pawn(new Position(1, 2), colour.white);
@@ -29,7 +29,9 @@ namespace ChessGame
             gameBoard.board[1, 6] = new Pawn(new Position(1, 6), colour.white);
             gameBoard.board[1, 7] = new Pawn(new Position(1, 7), colour.white);
 
-            //Adds white pawns to a list
+                                                                                 //Adds white pawns to a list
+          
+
             whitePawnList.Add(gameBoard.board[1, 0]);
             whitePawnList.Add(gameBoard.board[1, 1]);
             whitePawnList.Add(gameBoard.board[1, 2]);
@@ -39,7 +41,10 @@ namespace ChessGame
             whitePawnList.Add(gameBoard.board[1, 6]);
             whitePawnList.Add(gameBoard.board[1, 7]);
 
-            // Black Pawns sets at positions on GameBoard                                                                   
+
+
+
+                                                                                // Black Pawns sets at positions on GameBoard
             gameBoard.board[6, 0] = new Pawn(new Position(6, 0), colour.black);
             gameBoard.board[6, 1] = new Pawn(new Position(6, 1), colour.black);
             gameBoard.board[6, 2] = new Pawn(new Position(6, 2), colour.black);
@@ -49,7 +54,12 @@ namespace ChessGame
             gameBoard.board[6, 6] = new Pawn(new Position(6, 6), colour.black);
             gameBoard.board[6, 7] = new Pawn(new Position(6, 7), colour.black);
 
+<<<<<<< HEAD
             //Adds black pawns to a list                                                                    
+=======
+                                                                                //Adds black pawns to a list
+            List<Piece> blackPawnList = new List<Piece>();
+>>>>>>> parent of 2df0a30... Svarta och vita bönder rör sig själva. 1 steg var
                              
             blackPawnList.Add(gameBoard.board[6, 0]);
             blackPawnList.Add(gameBoard.board[6, 1]);
@@ -62,15 +72,15 @@ namespace ChessGame
 
 
             MovePosition movePosition = new MovePosition(gameBoard);
+           
 
-
-            // Print whitePawn list                                                                   
+                                                                                // Print whitePawn list
             foreach (var whitePawn in whitePawnList)
             {
                 Console.WriteLine("White" + whitePawn.ToString());
             }
             Console.WriteLine();
-            // Print blackPawn list                                                                    
+                                                                                // Print blackPawn list
             foreach (var blackPawn in blackPawnList)
             {
                 Console.WriteLine("Black" + blackPawn);
@@ -82,12 +92,12 @@ namespace ChessGame
 
             if (answer == "y" || answer == "Y")
             {
-                bool continuePlaying = true;
-                // Game continues playing while continuePlaying == true                  
+                bool continuePlaying = true;                                    // Game continues playing while continuePlaying == true
                 while (continuePlaying == true)
                 {
                     Console.Clear();
                     gameBoard.PrintGameBoard();
+<<<<<<< HEAD
 
                     //gameBoard.PrintWhitePiece(whitePawnList);
   
@@ -97,36 +107,56 @@ namespace ChessGame
 
 
                     System.Threading.Thread.Sleep(200);
+=======
+                    Console.ReadKey();
+
+>>>>>>> parent of 2df0a30... Svarta och vita bönder rör sig själva. 1 steg var
                     Console.Clear();
-                    
-                    movePosition.RandomizeMove(whitePawnList);                     
+                    movePosition.RandomizeMove(whitePawnList);  // whitePawn moves from position [1,0] -> [2,0]
+                    Console.ReadKey();
                    
-                    gameBoard.PrintGameBoard();                                                              
-                    System.Threading.Thread.Sleep(200);
-                    Console.Clear();
-
-                    
-                    movePosition.RandomizeMove(blackPawnList);
                     gameBoard.PrintGameBoard();
-                    System.Threading.Thread.Sleep(200);
+                                                                // Prints the GameBoard updated
+                    Console.ReadKey();
                     Console.Clear();
+                                       
+                    //gameBoard.UpdatePosition(gameBoard.board[6, 1], new Position(5, 1));
+                    //Console.Clear();
+                    //gameBoard.PrintGameBoard();
+                    //Console.ReadKey();
 
-                    // prints out updated whitePawn positions
-                    //foreach (var whitePawn in whitePawnList)                    
-                    //{
-                    //    Console.WriteLine("White" + whitePawn.ToString());
+                    //gameBoard.UpdatePosition(gameBoard.board[2, 0], new Position(3, 0));
+                    //Console.Clear();
+                    //gameBoard.PrintGameBoard(gameBoard.board);
+                    //Console.ReadKey();
+                                     
+                    //gameBoard.UpdatePosition(gameBoard.board[5, 1], new Position(4, 1));
+                    //Console.Clear();
+                    //gameBoard.PrintGameBoard(gameBoard.board);
+                    //Console.ReadKey();
+                    //gameBoard.UpdatePosition(gameBoard.board[3, 0], new Position(4, 1));
+                    //Console.Clear();
+                    //gameBoard.PrintGameBoard(gameBoard.board);
+                    //Console.ReadKey();
+                    //gameBoard.UpdatePosition(gameBoard.board[4, 1], new Position(5, 1));
+                    //Console.Clear();
+                    //gameBoard.PrintGameBoard(gameBoard.board);
+                    //Console.ReadKey();
 
-                    //}
-                    // prints out updated blackPawn positions
-                    //Console.WriteLine();
-                    //foreach (var blackPawn in blackPawnList)
-                    //{
-                    //    Console.WriteLine("Black" + blackPawn.ToString());       
+                    foreach (var whitePawn in whitePawnList)                    // prints out updated whitePawn positions
+                    {
+                        Console.WriteLine("White" + whitePawn.ToString());
 
-                    //}
+                    }
+                    Console.WriteLine();
+                    foreach (var blackPawn in blackPawnList)
+                    {
+                        Console.WriteLine("Black" + blackPawn.ToString());       // prints out updated blackPawn positions
 
-                    // If continuePlaying == false; the game ends
-                    continuePlaying = true;                                    
+                    }
+
+                    Console.ReadKey();
+                    continuePlaying = true;                                    // If continuePlaying == false; the game ends
 
                 }
 

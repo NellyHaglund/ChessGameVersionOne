@@ -18,7 +18,6 @@ namespace ChessGame
             this.gameBoard = gameBoard;
         }
 
-        //MovePawn-Method that makes the pawns move 1 step
         public void MovePawn(Piece randomPiece)
         {
             if (position.X >= 0 && position.X <= 7 && position.Y >= 0 && position.Y <= 7)
@@ -30,6 +29,7 @@ namespace ChessGame
                 Console.WriteLine("U suck!!");
                 Console.ReadKey();
             }
+<<<<<<< HEAD
 
                 if (randomPiece.pieceColour == colour.white && MoveOk == true)
                 {
@@ -42,12 +42,13 @@ namespace ChessGame
 
                 }
             
+=======
+           // gameBoard.board[4, 3] = new Pawn(new Position(4, 3), colour.black);
+>>>>>>> parent of 2df0a30... Svarta och vita bönder rör sig själva. 1 steg var
         }
         Random random = new Random();
-        
-        //RandomizeMove-Method that randomize which pawn in the
-        //white/black-PawnList that moves
-        public void RandomizeMove(List<Piece> pawnList)
+            
+        public void RandomizeMove(List<Piece> whitePawnList)
         {
           while (MoveOk == false)
             {
@@ -58,6 +59,11 @@ namespace ChessGame
                
            }
             
+<<<<<<< HEAD
+=======
+            var randomPiece = whitePawnList.ElementAt(ran);
+            MovePawn(randomPiece);
+>>>>>>> parent of 2df0a30... Svarta och vita bönder rör sig själva. 1 steg var
         }
        
 

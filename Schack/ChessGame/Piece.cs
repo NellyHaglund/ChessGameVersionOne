@@ -8,7 +8,9 @@ namespace ChessGame
 {
   public  abstract class Piece
     {
-        public Position position;       
+        public Position position;
+        //public int PositionX { get; set; }
+        //public int PositionY { get; set; }
         public bool Moved { get; set; }
         public colour pieceColour;                  
         public int pieceValue;
@@ -23,7 +25,7 @@ namespace ChessGame
         }
     }
 
-  //Enum class, uses too set players colour, black and/or white                                                 
+                                                    //Enum class, uses too set players colour, black and/or white
   public enum colour
   {
       white, black

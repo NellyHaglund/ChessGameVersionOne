@@ -10,12 +10,10 @@ namespace ChessGame
     {
         public int X;
         public int Y;
-
-        // Constructors
         public Position()
         {
 
-        }                                
+        }                                // Constructor
         public Position(int x, int y)
         {
             X = x;
