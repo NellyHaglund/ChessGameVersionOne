@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 namespace ChessGame
 {
     public class StartClass
-    {  
+    {
+      public  List<Piece> blackPawnList = new List<Piece>();
+
         public List<Piece> whitePawnList = new List<Piece>();
         public void Start()
 
@@ -48,7 +50,6 @@ namespace ChessGame
             gameBoard.board[6, 7] = new Pawn(new Position(6, 7), colour.black);
 
             //Adds black pawns to a list                                                                    
-            List<Piece> blackPawnList = new List<Piece>();
                              
             blackPawnList.Add(gameBoard.board[6, 0]);
             blackPawnList.Add(gameBoard.board[6, 1]);
@@ -87,7 +88,14 @@ namespace ChessGame
                 {
                     Console.Clear();
                     gameBoard.PrintGameBoard();
-                    
+
+                    //gameBoard.PrintWhitePiece(whitePawnList);
+  
+
+
+
+
+
                     System.Threading.Thread.Sleep(200);
                     Console.Clear();
                     

@@ -8,7 +8,10 @@ namespace ChessGame
 {
     public class MovePosition
     {
+        Position position = new Position();
         GameBoard gameBoard;
+        bool MoveOk;
+
         public MovePosition(GameBoard gameBoard)
         {
             // TODO: Complete member initialization
@@ -18,15 +21,27 @@ namespace ChessGame
         //MovePawn-Method that makes the pawns move 1 step
         public void MovePawn(Piece randomPiece)
         {
-            if (randomPiece.pieceColour == colour.white)
+            if (position.X >= 0 && position.X <= 7 && position.Y >= 0 && position.Y <= 7)
             {
-                gameBoard.UpdatePosition(randomPiece, new Position(randomPiece.position.X + 1,randomPiece.position.Y));
+                MoveOk = true;
             }
             else
             {
-                gameBoard.UpdatePosition(randomPiece, new Position(randomPiece.position.X - 1,randomPiece.position.Y));
+                Console.WriteLine("U suck!!");
+                Console.ReadKey();
             }
-          
+
+                if (randomPiece.pieceColour == colour.white && MoveOk == true)
+                {
+                    gameBoard.UpdatePosition(randomPiece, new Position(randomPiece.position.X + 1, randomPiece.position.Y));
+
+                }
+                else
+                {
+                    gameBoard.UpdatePosition(randomPiece, new Position(randomPiece.position.X - 1, randomPiece.position.Y));
+
+                }
+            
         }
         Random random = new Random();
         
@@ -34,10 +49,15 @@ namespace ChessGame
         //white/black-PawnList that moves
         public void RandomizeMove(List<Piece> pawnList)
         {
-            int ran = random.Next((7));
+          while (MoveOk == false)
+            {
+                int ran = random.Next((pawnList.Count));
+
+                var randomPiece = pawnList.ElementAt(ran);
+                MovePawn(randomPiece);
+               
+           }
             
-            var randomPiece = pawnList.ElementAt(ran);
-            MovePawn(randomPiece);
         }
        
 
