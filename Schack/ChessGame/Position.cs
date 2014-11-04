@@ -13,7 +13,9 @@ namespace ChessGame
         public Position()
         {
 
-        }                                // Constructor
+        }     
+       
+       //Position Constructor           
         public Position(int x, int y)
         {
             X = x;

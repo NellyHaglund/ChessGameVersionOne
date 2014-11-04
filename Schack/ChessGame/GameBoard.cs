@@ -42,9 +42,7 @@ namespace ChessGame
             {
                 Console.WriteLine("Hoppsan! Error..");
                 
-            }
-                    
-          
+            }          
            
         }
         // PrintGameBoard-method, prints out the GameBoard and sets out the
