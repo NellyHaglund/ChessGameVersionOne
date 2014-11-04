@@ -91,11 +91,15 @@ namespace ChessGame
 
             if (answer == "y" || answer == "Y")
             {
-                bool continuePlaying = true;                                    // Game continues playing while continuePlaying == true
+                bool continuePlaying = true;
+                int turn = 0;
+
+                // Game continues playing while continuePlaying == true
                 while (continuePlaying == true)
                 {
                     Console.Clear();
                     gameBoard.PrintGameBoard();
+                    Console.WriteLine();
                     
                     Console.Clear();
                     movePosition.RandomizeMove(whitePawnList);
