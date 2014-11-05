@@ -8,9 +8,25 @@ namespace ChessGame
 {
     class Bishop : Piece
     {
-        public override void Value()
+         public Bishop(Position pos, colour c)     // Create Pawn with position, value and colour
         {
-            pieceValue = pieceValue + 4;
+            position = pos;
+            pieceValue = 20;            
+            pieceColour = c;
+        }
+
+        public override string ToString()       // Method that Prints position of Pawn
+        {
+            if (pieceColour == colour.white)
+            {
+                
+            
+            return "White Bishop moved from position:  " + position.X + "," + position.Y;
+            }
+            else
+            {
+                return "Black Bishop moved from position:  " + position.X + "," + position.Y;  
+            }
         }
     }
 }

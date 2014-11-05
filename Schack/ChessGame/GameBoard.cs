@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,6 +13,8 @@ namespace ChessGame
         
         // creating the array of the GameBoard at 8*8 
         public Piece[,] board = new Piece[8, 8];
+        private MovePosition mover;
+        private GameBoard boarde;
 
         //MovePosition move;
         //StartClass start;
@@ -28,6 +31,9 @@ namespace ChessGame
         //}
          
         // UpdatePosition-method, gets the piece and sets the new position X & Y
+        
+
+
         public void UpdatePosition(Piece piece, Position pos)                 
         {
 
@@ -40,8 +46,8 @@ namespace ChessGame
             }
             else
             {
+                               
                 Console.WriteLine("Hoppsan! Error..");
-                
             }          
            
         }
@@ -77,6 +83,55 @@ namespace ChessGame
                             Console.ResetColor();
                             Console.Write("]");
                         }
+                        else if (board[x, y].pieceValue == 40 && board[x, y].pieceColour == colour.white)
+                        {
+                            Console.Write("[");
+                            Console.ForegroundColor = ConsoleColor.DarkYellow;
+                            Console.Write("K");
+                            Console.ResetColor();
+                            Console.Write("]");
+                        }
+                        else if (board[x, y].pieceValue == 40 && board[x, y].pieceColour == colour.black)
+                        {
+                            Console.Write("[");
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.Write("K");
+                            Console.ResetColor();
+                            Console.Write("]");
+                        }
+                        else if (board[x, y].pieceValue == 38 && board[x, y].pieceColour == colour.white)
+                        {
+                            Console.Write("[");
+                            Console.ForegroundColor = ConsoleColor.DarkYellow;
+                            Console.Write("Q");
+                            Console.ResetColor();
+                            Console.Write("]");
+                        }
+                        else if (board[x, y].pieceValue == 38 && board[x, y].pieceColour == colour.black)
+                        {
+                            Console.Write("[");
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.Write("Q");
+                            Console.ResetColor();
+                            Console.Write("]");
+                        }
+                        else if (board[x, y].pieceValue == 6 && board[x, y].pieceColour == colour.white)
+                        {
+                            Console.Write("[");
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.Write("H");
+                            Console.ResetColor();
+                            Console.Write("]");
+                        }
+                        else if (board[x, y].pieceValue == 6 && board[x, y].pieceColour == colour.black)
+                        {
+                            Console.Write("[");
+                            Console.ForegroundColor = ConsoleColor.Gray;
+                            Console.Write("H");
+                            Console.ResetColor();
+                            Console.Write("]");
+                        }
+
                         else
                         {
                             Console.Write("FEL: " + board[x, y].pieceValue);

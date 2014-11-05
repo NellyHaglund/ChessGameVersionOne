@@ -8,9 +8,25 @@ namespace ChessGame
 {
     class Queen : Piece
     {
-        public override void Value()
+        public Queen(Position pos, colour c)     // Create Pawn with position, value and colour
         {
-            pieceValue = pieceValue + 12;
+            position = pos;
+            pieceValue = 38;            
+            pieceColour = c;
+        }
+
+        public override string ToString()       // Method that Prints position of Pawn
+        {
+            if (pieceColour == colour.white)
+            {
+                
+            
+            return "White Queen moved from position:  " + position.X + "," + position.Y;
+            }
+            else
+            {
+                return "Black Queen moved from position:  " + position.X + "," + position.Y;  
+            }
         }
     }
 }

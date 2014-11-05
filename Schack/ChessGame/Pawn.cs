@@ -27,7 +27,16 @@ namespace ChessGame
                                                
         public override string ToString()       // Method that Prints position of Pawn
         {
-            return "Pawn at position:  " + position.X + "," + position.Y;
+            if (pieceColour == colour.white)
+            {
+
+
+                return "White Pawn moved from position:  " + position.X + "," + position.Y;
+            }
+            else
+            {
+                return "Black Pawn moved from position:  " + position.X + "," + position.Y;
+            }
         }
     }
 }
