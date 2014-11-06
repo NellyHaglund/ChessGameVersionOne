@@ -89,14 +89,27 @@ namespace ChessGame
             Console.ReadKey();
             Random random = new Random();
 
+
+            
+            Console.ReadLine();
+
+
             if (answer == "y" || answer == "Y")
             {
                 bool continuePlaying = true;
                 int turn = 0;
+                
+
+                
+
 
                 // Game continues playing while continuePlaying == true
                 while (continuePlaying == true)
                 {
+                    movePosition.CheckFreePos(whitePawnList, blackPawnList);
+                    Console.ReadLine();
+
+
                     Console.Clear();
                     gameBoard.PrintGameBoard();
                     Console.WriteLine();

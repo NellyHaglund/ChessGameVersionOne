@@ -10,7 +10,7 @@ namespace ChessGame
     {
         Position position = new Position();
         GameBoard gameBoard;
-       
+
 
         public MovePosition(GameBoard gameBoard)
         {
@@ -21,8 +21,11 @@ namespace ChessGame
 
         public void MovePawn(Piece randomPiece)
         {
-    
-            while (randomPiece.position.X >= 0 && randomPiece.position.X <= 7 && randomPiece.position.Y >= 0 && randomPiece.position.Y <= 7)
+            int randompieceposx = randomPiece.position.X;
+            int randompieceposy = randomPiece.position.Y;
+
+
+            while (randompieceposx <= 7 && randompieceposy >= 0)
             {
 
 
@@ -78,7 +81,34 @@ namespace ChessGame
 
             }
         }
+        public List<Piece> CheckFreePos(List<Piece> White, List<Piece> black)
+        {
+            List<Piece> FreePos = new List<Piece>();
+
+            foreach (var item in White)             //Här vill jag att alla lediga pos på brädet lagras i en lista.
+            {                                       //Man får då jämföra sin Piecelista med FreePos listan för att kolla vilka som kan flytta
+                Console.WriteLine("Test teat teat " + item); // man får också jämföra (kanske först) vilka pjäser som man har som kan ta 
+
+
+                if (position x+1 y+ yield-1)
+                {
+                    FreePos.Add(item);
+                }
+                
+                
+              
+            }
+
+            
+            foreach (var item in FreePos)
+            {
+                Console.WriteLine("nya listan"+ item);
+            }
+            return FreePos;
+        }
+
     }
+
 
 }
 
