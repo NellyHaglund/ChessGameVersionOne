@@ -8,9 +8,25 @@ namespace ChessGame
 {
     class Rook : Piece
     {
-        public override void Value()
+         public Rook(Position pos, colour c)     // Create Pawn with position, value and colour
         {
-            pieceValue = pieceValue + 8;
+            position = pos;
+            pieceValue = 13;            
+            pieceColour = c;
+        }
+
+        public override string ToString()       // Method that Prints position of Pawn
+        {
+            if (pieceColour == colour.white)
+            {
+                
+            
+            return "White Rook moved from position:  " + position.X + "," + position.Y;
+            }
+            else
+            {
+                return "Black Rook moved from position:  " + position.X + "," + position.Y;  
+            }
         }
     }
 }
