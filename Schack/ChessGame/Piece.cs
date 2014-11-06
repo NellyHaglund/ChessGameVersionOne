@@ -13,7 +13,9 @@ namespace ChessGame
         public bool Moved { get; set; }
         public colour pieceColour;                  
         public int pieceValue;
-        
+
+        public virtual void Move() { }
+     
         public virtual void Value()
         {
             Console.WriteLine("Värde PieceKlassen");

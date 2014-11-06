@@ -13,8 +13,7 @@ namespace ChessGame
         
         // creating the array of the GameBoard at 8*8 
         public Piece[,] board = new Piece[8, 8];
-        private MovePosition mover;
-        private GameBoard boarde;
+       
 
         //MovePosition move;
         //StartClass start;

@@ -8,12 +8,31 @@ namespace ChessGame
 {
     class Queen : Piece
     {
-        public Queen(Position pos, colour c)     // Create Pawn with position, value and colour
+    GameBoard gameBoard;
+         public Queen(Position pos, colour c, GameBoard gameBoard)     // Create Pawn with position, value and colour
         {
             position = pos;
             pieceValue = 38;            
             pieceColour = c;
+            this.gameBoard = gameBoard;
         }
+
+         public override void Move()
+         {
+             bool hasMoved = false;
+
+             if (pieceColour == colour.white)
+             {
+                 gameBoard.UpdatePosition(this, new Position(position.X + 1, position.Y));
+            
+                 // break;
+             }
+             else
+             {
+                 gameBoard.UpdatePosition(this, new Position(position.X - 1, position.Y));
+                 // break;
+             }
+         }
 
         public override string ToString()       // Method that Prints position of Pawn
         {

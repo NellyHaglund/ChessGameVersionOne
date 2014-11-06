@@ -12,6 +12,8 @@ namespace ChessGame
         GameBoard gameBoard;
         StartClass listInStart = new StartClass();
         Random random = new Random();
+       
+
         public MovePosition(GameBoard gameBoard)
         {
             // TODO: Complete member initialization
@@ -19,21 +21,24 @@ namespace ChessGame
         }
         public void MovePiece(Piece randomPiece)
         {
-            while (randomPiece.position.X >= 0 || randomPiece.position.X <= 7)
-            {
-                if (randomPiece.pieceColour == colour.white)
-                {
-                    gameBoard.UpdatePosition(randomPiece, new Position(randomPiece.position.X + 1, randomPiece.position.Y));
-                    break;
-                }
-                else
-                {
-                    gameBoard.UpdatePosition(randomPiece, new Position(randomPiece.position.X - 1, randomPiece.position.Y));
-                    break;
-                }
-            }
+          //  Pawn movePawn = new MovePosition(gameBoard);
+            randomPiece.Move();
+
+            //while (randomPiece.position.X >= 0 || randomPiece.position.X <= 7)
+            //{
+            //    if (randomPiece.pieceColour == colour.white)
+            //    {
+            //        gameBoard.UpdatePosition(randomPiece, new Position(randomPiece.position.X + 1, randomPiece.position.Y));
+            //        break;
+            //    }
+            //    else
+            //    {
+            //        gameBoard.UpdatePosition(randomPiece, new Position(randomPiece.position.X - 1, randomPiece.position.Y));
+            //        break;
+            //    }
+            //}
         }
-        public void RandomizeMove(List<Piece> pawnList)
+        public void RandomizePiece(List<Piece> pawnList)
         {
             bool flag = true;
             while (flag == true)
@@ -42,8 +47,8 @@ namespace ChessGame
                 int ran = random.Next((pawnList.Count));
                 var randomPiece = pawnList.ElementAt(ran);
 
-                if (randomPiece.position.X < 0 || randomPiece.position.X > 7 ||
-                    randomPiece.position.Y < 0 || randomPiece.position.Y > 7)
+                if (position.X < 0 || position.X > 7 ||
+                    position.Y < 0 || position.Y > 7)
                 {
                     if (randomPiece.pieceColour == colour.white)
                     {
@@ -66,16 +71,35 @@ namespace ChessGame
                 
             }
         }
-        //public List<Piece> ListTest(List<Piece> blackPieces, List<Piece> whitePieces)
-        //{
-        //    List<Piece> BlockPosition = new List<Piece>();
-        //    foreach (var black in blackPieces)
-        //    {
+ 
 
+
+        //        public List<Piece> CheckFreePos(List<Piece> White, List<Piece> black)
+        //{
+        //    List<Piece> FreePos = new List<Piece>();
+
+        //    foreach (var item in White)             //Här vill jag att alla lediga pos på brädet lagras i en lista.
+        //    {                                       //Man får då jämföra sin Piecelista med FreePos listan för att kolla vilka som kan flytta
+        //        Console.WriteLine("Test teat teat " + item); // man får också jämföra (kanske först) vilka pjäser som man har som kan ta 
+
+
+        //        if (position x+1 y+ yield-1)
+        //        {
+        //            FreePos.Add(item);
+        //        }
+                
+                
+              
         //    }
 
-        //    return BlockPosition;
+            
+        //    foreach (var item in FreePos)
+        //    {
+        //        Console.WriteLine("nya listan"+ item);
+        //    }
+        //    return FreePos;
         //}
+
 
 
     }
