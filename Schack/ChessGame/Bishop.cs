@@ -9,40 +9,86 @@ namespace ChessGame
     class Bishop : Piece
     {
         GameBoard gameBoard;
-         public Bishop(Position pos, colour c, GameBoard gameBoard)     // Create Pawn with position, value and colour
+        public Bishop(Position pos, colour c, GameBoard gameBoard)     // Create Pawn with position, value and colour
         {
             position = pos;
-            pieceValue = 20;            
+            pieceValue = 3;
             pieceColour = c;
             this.gameBoard = gameBoard;
         }
-         public override void Move()
-         {
-             bool hasMoved = false;
-
-             if (pieceColour == colour.white)
-             {
-                 gameBoard.UpdatePosition(this, new Position(position.X + 1, position.Y));
-                 // break;
-             }
-             else
-             {
-                 gameBoard.UpdatePosition(this, new Position(position.X - 1, position.Y));
-                 // break;
-             }
-         }
-
-        public override string ToString()       // Method that Prints position of Pawn
+        //List With Possible Bishop Moves
+        List<Position> BishopMoves = new List<Position>();
+        public List<Position> PossibleBishopMoves()
         {
+            BishopMoves.Clear();
+            // Diagonalt nedåt mot höger
+            BishopMoves.Add(new Position(position.X + 1, position.Y + 1));
+            BishopMoves.Add(new Position(position.X + 2, position.Y + 2));
+            BishopMoves.Add(new Position(position.X + 3, position.Y + 3));
+            BishopMoves.Add(new Position(position.X + 4, position.Y + 4));
+            BishopMoves.Add(new Position(position.X + 5, position.Y + 5));
+            BishopMoves.Add(new Position(position.X + 6, position.Y + 6));
+            BishopMoves.Add(new Position(position.X + 7, position.Y + 7));
+            // Diagonalt nedåt mot vänster
+            BishopMoves.Add(new Position(position.X + 1, position.Y - 1));
+            BishopMoves.Add(new Position(position.X + 2, position.Y - 2));
+            BishopMoves.Add(new Position(position.X + 3, position.Y - 3));
+            BishopMoves.Add(new Position(position.X + 4, position.Y - 4));
+            BishopMoves.Add(new Position(position.X + 5, position.Y - 5));
+            BishopMoves.Add(new Position(position.X + 6, position.Y - 6));
+            BishopMoves.Add(new Position(position.X + 7, position.Y - 7));
+            // Diagonalt uppåt mot vänster
+            BishopMoves.Add(new Position(position.X - 1, position.Y + 1));
+            BishopMoves.Add(new Position(position.X - 2, position.Y + 2));
+            BishopMoves.Add(new Position(position.X - 3, position.Y + 3));
+            BishopMoves.Add(new Position(position.X - 4, position.Y + 4));
+            BishopMoves.Add(new Position(position.X - 5, position.Y + 5));
+            BishopMoves.Add(new Position(position.X - 6, position.Y + 6));
+            BishopMoves.Add(new Position(position.X - 7, position.Y + 7));
+            // Diagonalt uppåt mot höger
+            BishopMoves.Add(new Position(position.X - 1, position.Y - 1));
+            BishopMoves.Add(new Position(position.X - 2, position.Y - 2));
+            BishopMoves.Add(new Position(position.X - 3, position.Y - 3));
+            BishopMoves.Add(new Position(position.X - 4, position.Y - 4));
+            BishopMoves.Add(new Position(position.X - 5, position.Y - 5));
+            BishopMoves.Add(new Position(position.X - 6, position.Y - 6));
+            BishopMoves.Add(new Position(position.X - 7, position.Y - 7));
+
+            return BishopMoves;
+        }
+
+        public override void Move()
+        {
+
+            PossibleBishopMoves();
+
+            Random random = new Random();
+
+            //Väljer ut ett slumpmässigt drag från listan
+            int ranking = random.Next((BishopMoves.Count));
+
             if (pieceColour == colour.white)
             {
-                
-            
-            return "White Bishop moved from position:  " + position.X + "," + position.Y;
+                gameBoard.UpdatePosition(this, BishopMoves.ElementAt(ranking));
+
             }
             else
             {
-                return "Black Bishop moved from position:  " + position.X + "," + position.Y;  
+                gameBoard.UpdatePosition(this, BishopMoves.ElementAt(ranking));
+
+            }
+        }
+
+        // Method that Prints position of Bishop
+        public override string ToString()
+        {
+            if (pieceColour == colour.white)
+            {
+                return "White Bishop moved from position:  " + position.X + "," + position.Y;
+            }
+            else
+            {
+                return "Black Bishop moved from position:  " + position.X + "," + position.Y;
             }
         }
     }

@@ -9,29 +9,9 @@ namespace ChessGame
 {
     public class GameBoard
     {
-
-        
+   
         // creating the array of the GameBoard at 8*8 
         public Piece[,] board = new Piece[8, 8];
-       
-
-        //MovePosition move;
-        //StartClass start;
-        //public GameBoard(MovePosition move, StartClass start)
-        //{
-        //    // TODO: Complete member initialization
-        //    this.move = move;
-        //    this.start = start;
-        //}
-
-        //public GameBoard()
-        //{
-        //    // TODO: Complete member initialization
-        //}
-         
-        // UpdatePosition-method, gets the piece and sets the new position X & Y
-        
-
 
         public void UpdatePosition(Piece piece, Position pos)                 
         {
@@ -66,55 +46,65 @@ namespace ChessGame
 
                             Console.Write("[ ]");
                         }
-                        else if (board[x, y].pieceValue == 5 && board[x, y].pieceColour == colour.white)
+                        
+                        //Vit Kung
+                        else if (board[x, y].pieceValue == 11 && board[x, y].pieceColour == colour.white)
                         {
                             Console.Write("[");
-                            Console.ForegroundColor = ConsoleColor.Blue;
-                            Console.Write("B");
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.Write("K");
                             Console.ResetColor();
                             Console.Write("]");
                         }
+                        //Svart Kung
+                        else if (board[x, y].pieceValue == 11 && board[x, y].pieceColour == colour.black)
+                        {
+                            
+                            Console.Write("[");
+                            Console.ForegroundColor = ConsoleColor.DarkGreen;
+                            Console.Write("K");
+                            Console.ResetColor();
+                            Console.Write("]");
+                        }
+                        //Vit Queen
+                        else if (board[x, y].pieceValue == 9 && board[x, y].pieceColour == colour.white)
+                        {
+                            Console.Write("[");
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.Write("Q");
+                            Console.ResetColor();
+                            Console.Write("]");
+                        }
+                        //Black Queen
+                        else if (board[x, y].pieceValue == 9 && board[x, y].pieceColour == colour.black)
+                        {
+                            Console.Write("[");
+                            Console.ForegroundColor = ConsoleColor.DarkGreen;
+                            Console.Write("Q");
+                            Console.ResetColor();
+                            Console.Write("]");
+                        }
+                        
+                        //White Rook
+                        else if (board[x, y].pieceValue == 5 && board[x, y].pieceColour == colour.white)
+                        {
+                            Console.Write("[");
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.Write("R");
+                            Console.ResetColor();
+                            Console.Write("]");
+                        }
+                            //Black Rook
                         else if (board[x, y].pieceValue == 5 && board[x, y].pieceColour == colour.black)
                         {
                             Console.Write("[");
                             Console.ForegroundColor = ConsoleColor.DarkGreen;
-                            Console.Write("B");
+                            Console.Write("R");
                             Console.ResetColor();
                             Console.Write("]");
                         }
-                        else if (board[x, y].pieceValue == 40 && board[x, y].pieceColour == colour.white)
-                        {
-                            Console.Write("[");
-                            Console.ForegroundColor = ConsoleColor.DarkYellow;
-                            Console.Write("K");
-                            Console.ResetColor();
-                            Console.Write("]");
-                        }
-                        else if (board[x, y].pieceValue == 40 && board[x, y].pieceColour == colour.black)
-                        {
-                            Console.Write("[");
-                            Console.ForegroundColor = ConsoleColor.Cyan;
-                            Console.Write("K");
-                            Console.ResetColor();
-                            Console.Write("]");
-                        }
-                        else if (board[x, y].pieceValue == 38 && board[x, y].pieceColour == colour.white)
-                        {
-                            Console.Write("[");
-                            Console.ForegroundColor = ConsoleColor.DarkYellow;
-                            Console.Write("Q");
-                            Console.ResetColor();
-                            Console.Write("]");
-                        }
-                        else if (board[x, y].pieceValue == 38 && board[x, y].pieceColour == colour.black)
-                        {
-                            Console.Write("[");
-                            Console.ForegroundColor = ConsoleColor.Cyan;
-                            Console.Write("Q");
-                            Console.ResetColor();
-                            Console.Write("]");
-                        }
-                        else if (board[x, y].pieceValue == 6 && board[x, y].pieceColour == colour.white)
+                        //White Horse
+                        else if (board[x, y].pieceValue == 4 && board[x, y].pieceColour == colour.white)
                         {
                             Console.Write("[");
                             Console.ForegroundColor = ConsoleColor.Red;
@@ -122,15 +112,51 @@ namespace ChessGame
                             Console.ResetColor();
                             Console.Write("]");
                         }
-                        else if (board[x, y].pieceValue == 6 && board[x, y].pieceColour == colour.black)
+                        //Black Horse
+                        else if (board[x, y].pieceValue == 4 && board[x, y].pieceColour == colour.black)
                         {
                             Console.Write("[");
-                            Console.ForegroundColor = ConsoleColor.Gray;
+                            Console.ForegroundColor = ConsoleColor.DarkGreen;
                             Console.Write("H");
                             Console.ResetColor();
                             Console.Write("]");
                         }
-
+                            //White Löpare
+                        else if (board[x, y].pieceValue == 3 && board[x, y].pieceColour == colour.white)
+                        {
+                            Console.Write("[");
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.Write("L");
+                            Console.ResetColor();
+                            Console.Write("]");
+                        }
+                            //Black löpare
+                        else if (board[x, y].pieceValue == 3 && board[x, y].pieceColour == colour.black)
+                        {
+                            Console.Write("[");
+                            Console.ForegroundColor = ConsoleColor.DarkGreen;
+                            Console.Write("L");
+                            Console.ResetColor();
+                            Console.Write("]");
+                        }
+                        //Vit Bonden
+                        else if (board[x, y].pieceValue == 1 && board[x, y].pieceColour == colour.white)
+                        {
+                            Console.Write("[");
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.Write("B");
+                            Console.ResetColor();
+                            Console.Write("]");
+                        }
+                        //Svart Bonden
+                        else if (board[x, y].pieceValue == 1 && board[x, y].pieceColour == colour.black)
+                        {
+                            Console.Write("[");
+                            Console.ForegroundColor = ConsoleColor.DarkGreen;
+                            Console.Write("B");
+                            Console.ResetColor();
+                            Console.Write("]");
+                        }
                         else
                         {
                             Console.Write("FEL: " + board[x, y].pieceValue);
@@ -139,7 +165,6 @@ namespace ChessGame
                 }
 
                 Console.WriteLine();
-                //kommentar..
             }
             
         }
