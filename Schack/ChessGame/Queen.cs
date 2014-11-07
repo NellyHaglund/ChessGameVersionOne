@@ -9,12 +9,13 @@ namespace ChessGame
     class Queen : Piece
     {
         GameBoard gameBoard;
-        public Queen(Position pos, colour c, GameBoard gameBoard)
+        public Queen(Position pos, ConsoleColor c, GameBoard gameBoard)
         {
             position = pos;
             pieceValue = 9;
-            pieceColour = c;
+            PieceColour = c;
             this.gameBoard = gameBoard;
+            PieceChar = 'Q';
         }
 
         List<Position> QueenMoves = new List<Position>();
@@ -90,14 +91,14 @@ namespace ChessGame
             return QueenMoves;
         }
 
-        public override void Move()
+        public override void Move(Piece piece)
         {
             PossibleQueenMoves();
 
             Random random = new Random();
             int ranking = random.Next((QueenMoves.Count));
 
-            if (pieceColour == colour.white)
+            if (PieceColour == ConsoleColor.White)
             {
                 gameBoard.UpdatePosition(this, QueenMoves.ElementAt(ranking));
             }
@@ -109,7 +110,7 @@ namespace ChessGame
 
         public override string ToString()  
         {
-            if (pieceColour == colour.white)
+            if (PieceColour == ConsoleColor.White)
             {
 
 

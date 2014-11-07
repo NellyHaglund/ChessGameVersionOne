@@ -9,12 +9,13 @@ namespace ChessGame
     class Bishop : Piece
     {
         GameBoard gameBoard;
-        public Bishop(Position pos, colour c, GameBoard gameBoard)     // Create Pawn with position, value and colour
+        public Bishop(Position pos, ConsoleColor c, GameBoard gameBoard)     // Create Pawn with position, value and colour
         {
             position = pos;
             pieceValue = 3;
-            pieceColour = c;
+            PieceColour = c;
             this.gameBoard = gameBoard;
+            PieceChar = 'B';
         }
         //List With Possible Bishop Moves
         List<Position> BishopMoves = new List<Position>();
@@ -57,7 +58,7 @@ namespace ChessGame
             return BishopMoves;
         }
 
-        public override void Move()
+        public override void Move(Piece piece)
         {
 
             PossibleBishopMoves();
@@ -67,9 +68,11 @@ namespace ChessGame
             //Väljer ut ett slumpmässigt drag från listan
             int ranking = random.Next((BishopMoves.Count));
 
-            if (pieceColour == colour.white)
+            if (PieceColour == ConsoleColor.White)
             {
-                gameBoard.UpdatePosition(this, BishopMoves.ElementAt(ranking));
+                
+                    gameBoard.UpdatePosition(this, BishopMoves.ElementAt(ranking));
+            
 
             }
             else
@@ -82,7 +85,7 @@ namespace ChessGame
         // Method that Prints position of Bishop
         public override string ToString()
         {
-            if (pieceColour == colour.white)
+            if (PieceColour == ConsoleColor.White)
             {
                 return "White Bishop moved from position:  " + position.X + "," + position.Y;
             }

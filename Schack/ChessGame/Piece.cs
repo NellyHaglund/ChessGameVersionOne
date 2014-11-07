@@ -11,26 +11,16 @@ namespace ChessGame
         public Position position;
       
         public bool Moved { get; set; }
-        public colour pieceColour;                  
+      public char PieceChar { get; protected set; }
+      public ConsoleColor PieceColour { get; set; }                 
         public int pieceValue;
 
-        public virtual void Move() { }
-     
-        public virtual void Value()
-        {
-            Console.WriteLine("Värde PieceKlassen");
-        }
-        public virtual void PrintPos()
-        {
-            Console.WriteLine("PieceKlassen");
-        }
-    }
+        public virtual void Move(Piece pic) { }
+
+      public virtual void EnemyOrFree(){}
+  
+  }
 
                                                     //Enum class, uses too set players colour, black and/or white
-  public enum colour
-  {
-      white, black
-
-
-  }
+  
 }

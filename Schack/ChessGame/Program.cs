@@ -9,11 +9,9 @@ namespace ChessGame
     class Program
     {
         static void Main(string[] args)
-        
-        
         {
-            
 
+            Console.BackgroundColor = ConsoleColor.DarkYellow;
             StartClass sC = new StartClass();
             
             sC.Start();

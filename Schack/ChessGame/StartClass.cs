@@ -27,54 +27,42 @@ namespace ChessGame
 
             //ATTTTENTION!!!!!!! [x,y] x är på lodrätt och y är vågrätt
             //White pieces set at positions on GameBoard & adds white pieces to a list                                                  
-            whitePieceList.Add(gameBoard.board[1, 0] = new Pawn(new Position(1, 0), colour.white, gameBoard));
-            whitePieceList.Add(gameBoard.board[1, 1] = new Pawn(new Position(1, 1), colour.white, gameBoard));
-            whitePieceList.Add(gameBoard.board[1, 2] = new Pawn(new Position(1, 2), colour.white, gameBoard));
-            whitePieceList.Add(gameBoard.board[1, 3] = new Pawn(new Position(1, 3), colour.white, gameBoard));
-            whitePieceList.Add(gameBoard.board[1, 4] = new Pawn(new Position(1, 4), colour.white, gameBoard));
-            whitePieceList.Add(gameBoard.board[1, 5] = new Pawn(new Position(1, 5), colour.white, gameBoard));
-            whitePieceList.Add(gameBoard.board[1, 6] = new Pawn(new Position(1, 6), colour.white, gameBoard));
-            whitePieceList.Add(gameBoard.board[1, 7] = new Pawn(new Position(1, 7), colour.white, gameBoard));
-            whitePieceList.Add(gameBoard.board[0, 4] = new King(new Position(0, 4), colour.white, gameBoard));
-            whitePieceList.Add(gameBoard.board[0, 3] = new Queen(new Position(0, 3), colour.white, gameBoard));
-            whitePieceList.Add(gameBoard.board[0, 1] = new Knight(new Position(0, 1), colour.white, gameBoard));
-            whitePieceList.Add(gameBoard.board[0, 6] = new Knight(new Position(0, 6), colour.white, gameBoard));
-            whitePieceList.Add(gameBoard.board[0, 0] = new Rook(new Position(0, 0), colour.white, gameBoard));
-            whitePieceList.Add(gameBoard.board[0, 7] = new Rook(new Position(0, 7), colour.white, gameBoard));
-            whitePieceList.Add(gameBoard.board[0, 2] = new Bishop(new Position(0, 2), colour.white, gameBoard));
-            whitePieceList.Add(gameBoard.board[0, 5] = new Bishop(new Position(0, 5), colour.white, gameBoard));
+            whitePieceList.Add(gameBoard.board[1, 0] = new Pawn(new Position(1, 0), ConsoleColor.White, gameBoard));
+            whitePieceList.Add(gameBoard.board[1, 1] = new Pawn(new Position(1, 1), ConsoleColor.White, gameBoard));
+            whitePieceList.Add(gameBoard.board[1, 2] = new Pawn(new Position(1, 2), ConsoleColor.White, gameBoard));
+            whitePieceList.Add(gameBoard.board[1, 3] = new Pawn(new Position(1, 3), ConsoleColor.White, gameBoard));
+            whitePieceList.Add(gameBoard.board[1, 4] = new Pawn(new Position(1, 4), ConsoleColor.White, gameBoard));
+            whitePieceList.Add(gameBoard.board[0, 4] = new King(new Position(0, 4), ConsoleColor.White, gameBoard));
+            whitePieceList.Add(gameBoard.board[1, 5] = new Pawn(new Position(1, 5), ConsoleColor.White, gameBoard));
+            whitePieceList.Add(gameBoard.board[1, 6] = new Pawn(new Position(1, 6), ConsoleColor.White, gameBoard));
+            whitePieceList.Add(gameBoard.board[1, 7] = new Pawn(new Position(1, 7), ConsoleColor.White, gameBoard));
+            whitePieceList.Add(gameBoard.board[0, 3] = new Queen(new Position(0, 3), ConsoleColor.White, gameBoard));
+            whitePieceList.Add(gameBoard.board[0, 1] = new Knight(new Position(0, 1), ConsoleColor.White, gameBoard));
+            whitePieceList.Add(gameBoard.board[0, 6] = new Knight(new Position(0, 6), ConsoleColor.White, gameBoard));
+            whitePieceList.Add(gameBoard.board[0, 0] = new Rook(new Position(0, 0), ConsoleColor.White, gameBoard));
+            whitePieceList.Add(gameBoard.board[0, 7] = new Rook(new Position(0, 7), ConsoleColor.White, gameBoard));
+            whitePieceList.Add(gameBoard.board[0, 2] = new Bishop(new Position(0, 2), ConsoleColor.White, gameBoard));
+            whitePieceList.Add(gameBoard.board[0, 5] = new Bishop(new Position(0, 5), ConsoleColor.White, gameBoard));
 
             // Black Pieces sets at positions on GameBoard & adds black pieces to a list
-            blackPieceList.Add(gameBoard.board[6, 0] = new Pawn(new Position(6, 0), colour.black, gameBoard));
-            blackPieceList.Add(gameBoard.board[6, 1] = new Pawn(new Position(6, 1), colour.black, gameBoard));
-            blackPieceList.Add(gameBoard.board[6, 2] = new Pawn(new Position(6, 2), colour.black, gameBoard));
-            blackPieceList.Add(gameBoard.board[6, 3] = new Pawn(new Position(6, 3), colour.black, gameBoard));
-            blackPieceList.Add(gameBoard.board[6, 4] = new Pawn(new Position(6, 4), colour.black, gameBoard));
-            blackPieceList.Add(gameBoard.board[6, 5] = new Pawn(new Position(6, 5), colour.black, gameBoard));
-            blackPieceList.Add(gameBoard.board[6, 6] = new Pawn(new Position(6, 6), colour.black, gameBoard));
-            blackPieceList.Add(gameBoard.board[6, 7] = new Pawn(new Position(6, 7), colour.black, gameBoard));
-            blackPieceList.Add(gameBoard.board[7, 4] = new King(new Position(7, 4), colour.black, gameBoard));
-            blackPieceList.Add(gameBoard.board[7, 3] = new Queen(new Position(7, 3), colour.black, gameBoard));
-            blackPieceList.Add(gameBoard.board[7, 1] = new Knight(new Position(7, 1), colour.black, gameBoard));
-            blackPieceList.Add(gameBoard.board[7, 6] = new Knight(new Position(7, 6), colour.black, gameBoard));
-            blackPieceList.Add(gameBoard.board[7, 0] = new Rook(new Position(7, 0), colour.black, gameBoard));
-            blackPieceList.Add(gameBoard.board[7, 7] = new Rook(new Position(7, 7), colour.black, gameBoard));
-            blackPieceList.Add(gameBoard.board[7, 2] = new Bishop(new Position(7, 2), colour.black, gameBoard));
-            blackPieceList.Add(gameBoard.board[7, 5] = new Bishop(new Position(7, 5), colour.black, gameBoard));
+            blackPieceList.Add(gameBoard.board[6, 0] = new Pawn(new Position(6, 0), ConsoleColor.Black, gameBoard));
+            blackPieceList.Add(gameBoard.board[6, 1] = new Pawn(new Position(6, 1), ConsoleColor.Black, gameBoard));
+            blackPieceList.Add(gameBoard.board[6, 2] = new Pawn(new Position(6, 2), ConsoleColor.Black, gameBoard));
+            blackPieceList.Add(gameBoard.board[6, 3] = new Pawn(new Position(6, 3), ConsoleColor.Black, gameBoard));
+            blackPieceList.Add(gameBoard.board[6, 4] = new Pawn(new Position(6, 4), ConsoleColor.Black, gameBoard));
+            blackPieceList.Add(gameBoard.board[6, 5] = new Pawn(new Position(6, 5), ConsoleColor.Black, gameBoard));
+            blackPieceList.Add(gameBoard.board[6, 6] = new Pawn(new Position(6, 6), ConsoleColor.Black, gameBoard));
+            blackPieceList.Add(gameBoard.board[6, 7] = new Pawn(new Position(6, 7), ConsoleColor.Black, gameBoard));
+            blackPieceList.Add(gameBoard.board[7, 4] = new King(new Position(7, 4), ConsoleColor.Black, gameBoard));
+            blackPieceList.Add(gameBoard.board[7, 3] = new Queen(new Position(7, 3), ConsoleColor.Black, gameBoard));
+            blackPieceList.Add(gameBoard.board[7, 1] = new Knight(new Position(7, 1), ConsoleColor.Black, gameBoard));
+            blackPieceList.Add(gameBoard.board[7, 6] = new Knight(new Position(7, 6), ConsoleColor.Black, gameBoard));
+            blackPieceList.Add(gameBoard.board[7, 0] = new Rook(new Position(7, 0), ConsoleColor.Black, gameBoard));
+            blackPieceList.Add(gameBoard.board[7, 7] = new Rook(new Position(7, 7), ConsoleColor.Black, gameBoard));
+            blackPieceList.Add(gameBoard.board[7, 2] = new Bishop(new Position(7, 2), ConsoleColor.Black, gameBoard));
+            blackPieceList.Add(gameBoard.board[7, 5] = new Bishop(new Position(7, 5), ConsoleColor.Black, gameBoard));
 
-            // Print WhitePiece list ( start positions )
-            foreach (var whitePiece in whitePieceList)
-            {
-                Console.WriteLine("White" + whitePiece);
-            }
-            Console.WriteLine();
-
-            // Print BlackPiece list ( start positions )
-            foreach (var blackPiece in blackPieceList)
-            {
-                Console.WriteLine("Black" + blackPiece);
-            }
-
+           
             Console.ReadKey();
             if (answer == "y" || answer == "Y")
             {
@@ -89,9 +77,8 @@ namespace ChessGame
                 Console.WriteLine();
                 Console.ReadKey();
 
-                while (continuePlaying == true)
+                while (continuePlaying)
                 {
-
 
                     Console.Clear();
                     movePosition.RandomizePiece(whitePieceList);
@@ -120,6 +107,20 @@ namespace ChessGame
                 }
 
             }
+            //// Print WhitePiece list ( start positions )
+            //foreach (var whitePiece in whitePieceList)
+            //{
+            //    //Console.SetCursorPosition(45, 35);
+            //    Console.Write("White" + whitePiece);
+            //}
+            //Console.WriteLine();
+
+            //// Print BlackPiece list ( start positions )
+            //foreach (var blackPiece in blackPieceList)
+            //{
+            //    Console.WriteLine("Black" + blackPiece);
+            //}
+
 
             Console.ReadLine();
         }

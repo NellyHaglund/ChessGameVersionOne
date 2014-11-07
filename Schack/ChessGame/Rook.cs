@@ -9,12 +9,13 @@ namespace ChessGame
     class Rook : Piece
     {
         GameBoard gameBoard;
-        public Rook(Position pos, colour c, GameBoard gameBoard)     // Create Pawn with position, value and colour
+        public Rook(Position pos, ConsoleColor c, GameBoard gameBoard)     // Create Pawn with position, value and colour
         {
             position = pos;
             pieceValue = 5;
-            pieceColour = c;
+            PieceColour = c;
             this.gameBoard = gameBoard;
+            PieceChar = 'R';
         }
         List<Position> RookMoves = new List<Position>();
 
@@ -58,7 +59,7 @@ namespace ChessGame
             return RookMoves;
         }
 
-        public override void Move()
+        public override void Move(Piece piece)
         {
 
             PossibleRookMoves();
@@ -70,7 +71,7 @@ namespace ChessGame
 
 
 
-            if (pieceColour == colour.white)
+            if (PieceColour == ConsoleColor.White)
             {
                 gameBoard.UpdatePosition(this, RookMoves.ElementAt(ranking));
                 // break;
@@ -84,7 +85,7 @@ namespace ChessGame
 
         public override string ToString()       // Method that Prints position of Pawn
         {
-            if (pieceColour == colour.white)
+            if (PieceColour == ConsoleColor.White)
             {
 
 

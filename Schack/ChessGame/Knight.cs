@@ -9,12 +9,13 @@ namespace ChessGame
     class Knight : Piece
     {
    GameBoard gameBoard;
-         public Knight(Position pos, colour c, GameBoard gameBoard)     // Create Pawn with position, value and colour
+         public Knight(Position pos, ConsoleColor c, GameBoard gameBoard)     // Create Pawn with position, value and colour
         {
             position = pos;
             pieceValue = 4;            
-            pieceColour = c;
+            PieceColour = c;
             this.gameBoard = gameBoard;
+            PieceChar = 'H';
         }
 
          List<Position> KnightMoves = new List<Position>();
@@ -35,7 +36,7 @@ namespace ChessGame
              return KnightMoves;
          }
 
-         public override void Move()
+         public override void Move(Piece piece)
          {
 
              PossibleKnightMoves();
@@ -47,7 +48,7 @@ namespace ChessGame
 
 
 
-             if (pieceColour == colour.white)
+             if (PieceColour == ConsoleColor.White)
              {
                  gameBoard.UpdatePosition(this, KnightMoves.ElementAt(ranking));
                  // break;
@@ -61,7 +62,7 @@ namespace ChessGame
 
         public override string ToString()       // Method that Prints position of Pawn
         {
-            if (pieceColour == colour.white)
+            if (PieceColour == ConsoleColor.White)
             {
                 
             

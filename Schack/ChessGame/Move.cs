@@ -9,10 +9,10 @@ namespace ChessGame
     public class MovePosition
     {
         Position position = new Position();
-        GameBoard gameBoard;
-        StartClass listInStart = new StartClass();
+        
         Random random = new Random();
-      
+
+        GameBoard gameBoard;
         public MovePosition(GameBoard gameBoard)
         {
             //Constructor..
@@ -21,21 +21,21 @@ namespace ChessGame
         public void MovePiece(Piece randomPiece)
         {
             //beroende på vilken piece det blir, så kallar vi på dennes Move metod
-            randomPiece.Move();   
+            randomPiece.Move(randomPiece);   
         }
         public void RandomizePiece(List<Piece> pawnList)
         {
             bool flag = true;
-            while (flag == true)
+            while (flag)
             {
                 flag = false;
                 int ran = random.Next((pawnList.Count));
                 var randomPiece = pawnList.ElementAt(ran);
 
-                if (position.X < 0 || position.X > 7 ||
-                    position.Y < 0 || position.Y > 7)
+                if (position.X < 0 && randomPiece.position.X > 7 &&
+                    randomPiece.position.Y < 0 && randomPiece.position.Y > 7)
                 {
-                    if (randomPiece.pieceColour == colour.white)
+                    if (randomPiece.PieceColour == ConsoleColor.White)
                     {
                         Console.WriteLine("Din vita pjäs är snart utanför brädet, flytta en annan");
                         Console.ReadKey();
@@ -55,8 +55,6 @@ namespace ChessGame
                     }         
             }
         }
- 
-
 
         //        public List<Piece> CheckFreePos(List<Piece> White, List<Piece> black)
         //{

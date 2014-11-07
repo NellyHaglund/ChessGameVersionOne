@@ -10,33 +10,35 @@ namespace ChessGame
     {
 
         GameBoard gameBoard;
-        
-        public King(Position pos, colour c, GameBoard gameBoard)     // Create Pawn with position, value and colour
+        List<Position> kingMoves = new List<Position>();
+
+        public King(Position position, ConsoleColor playerColour, GameBoard gameBoard)     // Create Pawn with position, value and colour
         {
-            position = pos;
+            base.position = position;
             pieceValue = 11;
-            pieceColour = c;
+            PieceColour = playerColour;
             this.gameBoard = gameBoard;
-          
+            PieceChar = 'K';
+
+
         }
-        List<Position> KingMoves = new List<Position>();
 
         public List<Position> PossibleKingMoves()
         {
-            KingMoves.Clear();
-            KingMoves.Add(new Position(position.X + 1, position.Y));
-            KingMoves.Add(new Position(position.X + 1, position.Y - 1));
-            KingMoves.Add(new Position(position.X + 1, position.Y + 1));
-            KingMoves.Add(new Position(position.X, position.Y - 1));
-            KingMoves.Add(new Position(position.X, position.Y + 1));
-            KingMoves.Add(new Position(position.X - 1, position.Y - 1));
-            KingMoves.Add(new Position(position.X - 1, position.Y + 1));
-            KingMoves.Add(new Position(position.X - 1, position.Y));
+            kingMoves.Clear();
+            kingMoves.Add(new Position(position.X + 1, position.Y));
+            kingMoves.Add(new Position(position.X + 1, position.Y - 1));
+            kingMoves.Add(new Position(position.X + 1, position.Y + 1));
+            kingMoves.Add(new Position(position.X, position.Y - 1));
+            kingMoves.Add(new Position(position.X, position.Y + 1));
+            kingMoves.Add(new Position(position.X - 1, position.Y - 1));
+            kingMoves.Add(new Position(position.X - 1, position.Y + 1));
+            kingMoves.Add(new Position(position.X - 1, position.Y));
 
-            return KingMoves;
+            return kingMoves;
         }
 
-        public override void Move()
+        public override void Move(Piece piece)
         {
 
                 PossibleKingMoves();
@@ -44,27 +46,29 @@ namespace ChessGame
             Random random = new Random();
 
 
-             int ranking = random.Next((KingMoves.Count));
+             int ranking = random.Next((kingMoves.Count));
             
 
 
-            if (pieceColour == colour.white)
+            if (PieceColour == ConsoleColor.White)
             {
-                gameBoard.UpdatePosition(this, KingMoves.ElementAt(ranking));
+                gameBoard.UpdatePosition(this, kingMoves.ElementAt(ranking));
                 // break;
             }
             else
             {
-                gameBoard.UpdatePosition(this, KingMoves.ElementAt(ranking));
+                gameBoard.UpdatePosition(this, kingMoves.ElementAt(ranking));
                 // break;
             }
         }
+       
+
+    
 
         public override string ToString()       // Method that Prints position of Pawn
         {
-            if (pieceColour == colour.white)
+            if (PieceColour == ConsoleColor.White)
             {
-
 
                 return "White King moved from position:  " + position.X + "," + position.Y;
             }
