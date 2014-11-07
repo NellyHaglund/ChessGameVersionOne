@@ -10,18 +10,20 @@ namespace ChessGame
     {
 
         GameBoard gameBoard;
+        
         public King(Position pos, colour c, GameBoard gameBoard)     // Create Pawn with position, value and colour
         {
             position = pos;
             pieceValue = 40;
             pieceColour = c;
             this.gameBoard = gameBoard;
+          
         }
         List<Position> KingMoves = new List<Position>();
 
         public List<Position> PossibleKingMoves()
         {
-
+            KingMoves.Clear();
             KingMoves.Add(new Position(position.X + 1, position.Y));
             KingMoves.Add(new Position(position.X + 1, position.Y - 1));
             KingMoves.Add(new Position(position.X + 1, position.Y + 1));
@@ -36,16 +38,24 @@ namespace ChessGame
 
         public override void Move()
         {
-            PossibleKingMoves();
+
+                PossibleKingMoves();
+            
+            Random random = new Random();
+
+
+             int ranking = random.Next((KingMoves.Count));
+            
+
 
             if (pieceColour == colour.white)
             {
-                gameBoard.UpdatePosition(this, KingMoves.ElementAt(4));
+                gameBoard.UpdatePosition(this, KingMoves.ElementAt(ranking));
                 // break;
             }
             else
             {
-                gameBoard.UpdatePosition(this, new Position(position.X - 1, position.Y));
+                gameBoard.UpdatePosition(this, KingMoves.ElementAt(ranking));
                 // break;
             }
         }

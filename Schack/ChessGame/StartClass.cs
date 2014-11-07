@@ -97,7 +97,22 @@ namespace ChessGame
                     turn++;
                     Console.WriteLine("Turn = " + turn);
                     Console.ReadKey();//System.Threading.Thread.Sleep(200);
-                    
+
+
+                    foreach (var whitePiece in whitePieceList)
+                    {
+                        Console.WriteLine("White" + whitePiece);
+                    }
+                    Console.WriteLine();
+
+                    // Print BlackPiece list
+                    foreach (var blackPiece in blackPieceList)
+                    {
+                        Console.WriteLine("Black" + blackPiece);
+                    }
+
+                    Console.ReadKey();
+
 
                     Console.Clear();
                     movePosition.RandomizePiece(blackPieceList);
