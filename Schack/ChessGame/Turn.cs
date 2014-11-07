@@ -6,8 +6,5 @@ using System.Threading.Tasks;
 
 namespace ChessGame
 {
-    class Turn
-    {
-        public int turn = 0;
-    }
+    //Kanske någon logic
 }

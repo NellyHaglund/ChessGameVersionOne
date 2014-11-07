@@ -15,7 +15,7 @@ namespace ChessGame
         public Pawn(Position pos, colour c, GameBoard gameBoard)     // Create Pawn with position, value and colour
         {
             position = pos;
-            pieceValue = 5;            
+            pieceValue = 1;            
             pieceColour = c;
             this.gameBoard = gameBoard;
         }

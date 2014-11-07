@@ -12,31 +12,16 @@ namespace ChessGame
         GameBoard gameBoard;
         StartClass listInStart = new StartClass();
         Random random = new Random();
-       
-
+      
         public MovePosition(GameBoard gameBoard)
         {
-            // TODO: Complete member initialization
+            //Constructor..
             this.gameBoard = gameBoard;
         }
         public void MovePiece(Piece randomPiece)
         {
-          //  Pawn movePawn = new MovePosition(gameBoard);
-            randomPiece.Move();
-
-            //while (randomPiece.position.X >= 0 || randomPiece.position.X <= 7)
-            //{
-            //    if (randomPiece.pieceColour == colour.white)
-            //    {
-            //        gameBoard.UpdatePosition(randomPiece, new Position(randomPiece.position.X + 1, randomPiece.position.Y));
-            //        break;
-            //    }
-            //    else
-            //    {
-            //        gameBoard.UpdatePosition(randomPiece, new Position(randomPiece.position.X - 1, randomPiece.position.Y));
-            //        break;
-            //    }
-            //}
+            //beroende på vilken piece det blir, så kallar vi på dennes Move metod
+            randomPiece.Move();   
         }
         public void RandomizePiece(List<Piece> pawnList)
         {
@@ -67,8 +52,7 @@ namespace ChessGame
                     if (flag == false)
                     {
                         MovePiece(randomPiece);
-                    }
-                
+                    }         
             }
         }
  

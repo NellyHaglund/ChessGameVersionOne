@@ -12,23 +12,49 @@ namespace ChessGame
          public Knight(Position pos, colour c, GameBoard gameBoard)     // Create Pawn with position, value and colour
         {
             position = pos;
-            pieceValue = 6;            
+            pieceValue = 4;            
             pieceColour = c;
             this.gameBoard = gameBoard;
         }
 
+         List<Position> KnightMoves = new List<Position>();
+
+         public List<Position> PossibleKnightMoves()
+         {
+             KnightMoves.Clear();
+             KnightMoves.Add(new Position(position.X + 1, position.Y - 2));
+             KnightMoves.Add(new Position(position.X + 2, position.Y - 1));
+             KnightMoves.Add(new Position(position.X + 2, position.Y + 1));
+             KnightMoves.Add(new Position(position.X + 1, position.Y + 2));
+             KnightMoves.Add(new Position(position.X - 1, position.Y + 2));
+             KnightMoves.Add(new Position(position.X - 2, position.Y + 1));
+             KnightMoves.Add(new Position(position.X - 2, position.Y - 1));
+             KnightMoves.Add(new Position(position.X - 1, position.Y - 2));
+        
+
+             return KnightMoves;
+         }
+
          public override void Move()
          {
-             bool hasMoved = false;
+
+             PossibleKnightMoves();
+
+             Random random = new Random();
+
+
+             int ranking = random.Next((KnightMoves.Count));
+
+
 
              if (pieceColour == colour.white)
              {
-                 gameBoard.UpdatePosition(this, new Position(position.X + 1, position.Y));
+                 gameBoard.UpdatePosition(this, KnightMoves.ElementAt(ranking));
                  // break;
              }
              else
              {
-                 gameBoard.UpdatePosition(this, new Position(position.X - 1, position.Y));
+                 gameBoard.UpdatePosition(this, KnightMoves.ElementAt(ranking));
                  // break;
              }
          }

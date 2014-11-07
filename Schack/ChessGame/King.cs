@@ -14,7 +14,7 @@ namespace ChessGame
         public King(Position pos, colour c, GameBoard gameBoard)     // Create Pawn with position, value and colour
         {
             position = pos;
-            pieceValue = 40;
+            pieceValue = 11;
             pieceColour = c;
             this.gameBoard = gameBoard;
           
