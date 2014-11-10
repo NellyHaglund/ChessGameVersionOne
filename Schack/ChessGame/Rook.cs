@@ -19,7 +19,7 @@ namespace ChessGame
         }
         List<Position> RookMoves = new List<Position>();
 
-        public List<Position> PossibleRookMoves()
+        public override void PossibleMoves()
         {
             RookMoves.Clear();
             // Rör sig lodrätt nedåt
@@ -56,13 +56,12 @@ namespace ChessGame
             RookMoves.Add(new Position(position.X, position.Y - 7));
 
 
-            return RookMoves;
         }
 
         public override void Move(Piece piece)
         {
 
-            PossibleRookMoves();
+            PossibleMoves();
 
             Random random = new Random();
 

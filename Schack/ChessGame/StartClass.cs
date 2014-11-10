@@ -81,7 +81,7 @@ namespace ChessGame
                 {
 
                     Console.Clear();
-                    movePosition.RandomizePiece(whitePieceList);
+                    movePosition.FindPieceToUse(whitePieceList);
                     //Print out gameboard - updated
                     gameBoard.PrintGameBoard();
                     Console.WriteLine("");
@@ -92,7 +92,7 @@ namespace ChessGame
                     //System.Threading.Thread.Sleep(200);
 
                     Console.Clear();
-                    movePosition.RandomizePiece(blackPieceList);
+                    movePosition.FindPieceToUse(blackPieceList);
                     //Print out gameboard - updated
                     gameBoard.PrintGameBoard();
                     Console.WriteLine("");

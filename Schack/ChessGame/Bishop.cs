@@ -19,7 +19,7 @@ namespace ChessGame
         }
         //List With Possible Bishop Moves
         List<Position> BishopMoves = new List<Position>();
-        public List<Position> PossibleBishopMoves()
+        public override void PossibleMoves()
         {
             BishopMoves.Clear();
             // Diagonalt nedåt mot höger
@@ -55,13 +55,13 @@ namespace ChessGame
             BishopMoves.Add(new Position(position.X - 6, position.Y - 6));
             BishopMoves.Add(new Position(position.X - 7, position.Y - 7));
 
-            return BishopMoves;
+            
         }
 
         public override void Move(Piece piece)
         {
 
-            PossibleBishopMoves();
+            PossibleMoves();
 
             Random random = new Random();
 

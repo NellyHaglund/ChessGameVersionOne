@@ -20,7 +20,7 @@ namespace ChessGame
 
          List<Position> KnightMoves = new List<Position>();
 
-         public List<Position> PossibleKnightMoves()
+         public override void PossibleMoves()
          {
              KnightMoves.Clear();
              KnightMoves.Add(new Position(position.X + 1, position.Y - 2));
@@ -31,15 +31,13 @@ namespace ChessGame
              KnightMoves.Add(new Position(position.X - 2, position.Y + 1));
              KnightMoves.Add(new Position(position.X - 2, position.Y - 1));
              KnightMoves.Add(new Position(position.X - 1, position.Y - 2));
-        
-
-             return KnightMoves;
+  
          }
 
          public override void Move(Piece piece)
          {
 
-             PossibleKnightMoves();
+             PossibleMoves();
 
              Random random = new Random();
 

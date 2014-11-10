@@ -9,6 +9,8 @@ namespace ChessGame
     class Queen : Piece
     {
         GameBoard gameBoard;
+        public List<Position> QueenMoves = new List<Position>();
+        public List<Position> FinalMovesList = new List<Position>();
         public Queen(Position pos, ConsoleColor c, GameBoard gameBoard)
         {
             position = pos;
@@ -16,11 +18,12 @@ namespace ChessGame
             PieceColour = c;
             this.gameBoard = gameBoard;
             PieceChar = 'Q';
+           
         }
+        public Queen() { }
+        
 
-        List<Position> QueenMoves = new List<Position>();
-
-        public List<Position> PossibleQueenMoves()
+        public override void PossibleMoves()
         {
             QueenMoves.Clear();
             // Rör sig lodrätt nedåt
@@ -88,12 +91,26 @@ namespace ChessGame
             QueenMoves.Add(new Position(position.X - 6, position.Y - 6));
             QueenMoves.Add(new Position(position.X - 7, position.Y - 7));
 
-            return QueenMoves;
+        }
+        public override void Finalmove(Piece piece)
+        { 
+            foreach (var position in QueenMoves )
+            {
+                //if (position == null)
+                //{
+                    FinalMovesList.Add(position);
+                //}
+              //  else if (position != null && PieceColour.)
+            }
+            foreach (var item in FinalMovesList)
+            {
+                Console.WriteLine(item);
+            }
         }
 
         public override void Move(Piece piece)
         {
-            PossibleQueenMoves();
+            PossibleMoves();
 
             Random random = new Random();
             int ranking = random.Next((QueenMoves.Count));
