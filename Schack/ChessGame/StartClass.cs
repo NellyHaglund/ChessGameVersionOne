@@ -8,6 +8,13 @@ namespace ChessGame
 {
     public class StartClass
     {
+        Queen queen = new Queen();
+
+
+
+
+
+
         //List With All Black Pieces
         public List<Piece> blackPieceList = new List<Piece>();
         //List With All White Pieces
@@ -62,7 +69,16 @@ namespace ChessGame
             blackPieceList.Add(gameBoard.board[7, 2] = new Bishop(new Position(7, 2), ConsoleColor.Black, gameBoard));
             blackPieceList.Add(gameBoard.board[7, 5] = new Bishop(new Position(7, 5), ConsoleColor.Black, gameBoard));
 
-           
+            Console.WriteLine("HHHbbbbH");
+
+            queen.PossibleMoves();
+
+            foreach (var item in queen.UpLeft)
+            {
+                Console.WriteLine(item.ToString());
+            }
+
+
             Console.ReadKey();
             if (answer == "y" || answer == "Y")
             {
@@ -71,11 +87,20 @@ namespace ChessGame
 
                 // Game continues playing while continuePlaying == true
 
+              
+
+
+
                 Console.Clear();
                 Console.WriteLine();
                 gameBoard.PrintGameBoard();
                 Console.WriteLine();
                 Console.ReadKey();
+
+
+
+               
+
 
                 while (continuePlaying)
                 {
